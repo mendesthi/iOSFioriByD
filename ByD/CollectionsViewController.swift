@@ -98,7 +98,8 @@ class CollectionsViewController: FUIFormTableViewController {
             (masterViewController as! ByDPSalesOrderMasterViewController).entitySetName = "SalesOrderCollection"
             func fetchByDPSalesOrderCollection(_ completionHandler: @escaping ([ByDPSalesOrder]?, Error?) -> Void) {
                 // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
-                let query = DataQuery().selectAll().top(20)
+//                let query = DataQuery().selectAll().top(20) //old
+                let query = DataQuery().selectAll().orderBy(ByDPSalesOrderItem.id, SortOrder.descending).top(20) //new
                 do {
                     self.appDelegate.byDC!.fetchSalesOrderCollection(matching: query) { byDPSalesOrderCollection, error in
                         if error == nil {

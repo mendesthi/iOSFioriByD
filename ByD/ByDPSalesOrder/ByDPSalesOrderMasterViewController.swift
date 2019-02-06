@@ -62,7 +62,8 @@ class ByDPSalesOrderMasterViewController: FUIFormTableViewController, SAPFioriLo
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let salesorder = self.entities[indexPath.row]
-        let cell = CellCreationHelper.objectCellWithNonEditableContent(tableView: tableView, indexPath: indexPath, key: "ObjectID", value: "\(salesorder.objectID!)")
+//        let cell = CellCreationHelper.objectCellWithNonEditableContent(tableView: tableView, indexPath: indexPath, key: "ObjectID", value: "\(salesorder.objectID!)") //old
+        let cell = CellCreationHelper.objectCellWithNonEditableContent(tableView: tableView, indexPath: indexPath, key: "id", value: "\(salesorder.id!)") //new
         return cell
     }
 
@@ -113,7 +114,8 @@ class ByDPSalesOrderMasterViewController: FUIFormTableViewController, SAPFioriLo
             let detailViewController = segue.destination as! ByDPSalesOrderDetailViewController
             detailViewController.entity = selectedEntity
             detailViewController.navigationItem.leftItemsSupplementBackButton = true
-            detailViewController.navigationItem.title = self.entities[(self.tableView.indexPathForSelectedRow?.row)!].objectID ?? ""
+//            detailViewController.navigationItem.title = self.entities[(self.tableView.indexPathForSelectedRow?.row)!].objectID ?? "" //old
+            detailViewController.navigationItem.title = self.entities[(self.tableView.indexPathForSelectedRow?.row)!].id ?? "" //new
             detailViewController.allowsEditableCells = false
             detailViewController.tableUpdater = self
             detailViewController.preventNavigationLoop = self.preventNavigationLoop

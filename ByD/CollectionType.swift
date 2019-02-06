@@ -29,7 +29,7 @@ enum CollectionType: String {
     static let all = [
         byDPSalesOrderCollection,
         byDPSalesOrderItemCollection,
-//        byDPSalesOrderItemProductCollection,
+//        byDPSalesOrderItemProductCollection,                  //old.start
 //        byDPSalesOrdercurrencyCode1Collection,
 //        byDPSalesOrdercurrencyCodeCollection,
 //        byDPSalesOrderSalesItemCollection,
@@ -42,6 +42,6 @@ enum CollectionType: String {
 //        byDPSalesUnitPartyNameCollection,
 //        byDPSalesOrderConsistencyStatusCodeCollection,
 //        byDPSalesOrderItemScheduleLineCollection,
-//        byDPSalesOrderDataOriginTypeCodeCollection,
+//        byDPSalesOrderDataOriginTypeCodeCollection,           //old.end
     ]
 }
